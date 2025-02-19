@@ -30,7 +30,7 @@
   }
 
   * {
-    @apply border-border;
+    @apply border-border scroll-smooth;
   }
 
   body {
@@ -39,7 +39,11 @@
   }
 
   .glass-effect {
-    @apply backdrop-blur-lg bg-white/30;
+    @apply backdrop-blur-lg bg-white/30 border border-white/20;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
