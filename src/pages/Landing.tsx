@@ -1,27 +1,42 @@
 
 import { Calendar } from "@/components/Calendar/Calendar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { ArrowRight, Building2, Globe2, Users2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl text-calendar-text font-semibold">
-              EGOV-KALENDER
+            <div className="flex items-center gap-3">
+              <Link to="/" className="text-2xl text-calendar-text font-semibold">
+                EGOV-KALENDER
+              </Link>
             </div>
-            <Button 
-              variant="outline" 
-              className="flex items-center gap-2"
-              onClick={() => navigate('/calendar')}
-            >
-              Open Calendar <ArrowRight className="w-4 h-4" />
-            </Button>
+            <div className="flex items-center gap-4">
+              <nav className="hidden md:flex items-center gap-6">
+                <a href="#features" className="text-calendar-text hover:text-calendar-selected transition-colors">
+                  Features
+                </a>
+                <a href="#about" className="text-calendar-text hover:text-calendar-selected transition-colors">
+                  About
+                </a>
+                <a href="#contact" className="text-calendar-text hover:text-calendar-selected transition-colors">
+                  Contact
+                </a>
+              </nav>
+              <Button 
+                variant="outline" 
+                className="flex items-center gap-2"
+                asChild
+              >
+                <Link to="/calendar">
+                  Open Calendar <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </header>
