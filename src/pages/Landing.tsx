@@ -2,8 +2,11 @@
 import { Calendar } from "@/components/Calendar/Calendar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm">
@@ -15,7 +18,7 @@ const Landing = () => {
             <Button 
               variant="outline" 
               className="flex items-center gap-2"
-              onClick={() => window.location.href = "/"}
+              onClick={() => navigate('/calendar')}
             >
               Open Calendar <ArrowRight className="w-4 h-4" />
             </Button>
